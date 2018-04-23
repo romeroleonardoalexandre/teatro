@@ -1,6 +1,6 @@
 
 <template>
-    <div class="col-md-2 text-center" :style="{ backgroundColor: this.currentSeat.color}" @click="change()">
+    <div class="col-md-2 text-center" :style="{ backgroundColor: this.currentSeat.color, opacity:0.7}" @click="change()">
         <img src="../assets/seat.png" style="width:100%;height:80%;">
         <h5>{{this.currentSeat.desc}}</h5>
     </div>

@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
-		<div class="container">
+		<div class="container center-block" align="center">
 			<div class="row" v-for="line in lines">
 				<seat v-for="col in cols"></seat>
 			</div>
@@ -26,19 +26,18 @@ components: { seat },
   },
   methods: {
     createPDF () {
-      // let pdfName = 'test'; 
+      
       var specialElementHandlers = {
       'container': function(element, renderer){
        return true;
     }
     };
       var doc = new jsPDF();
-      // doc.text("Hello World", 10, 10);
-      // doc.save(pdfName + '.pdf');
+     
       doc.fromHTML(document.body.innerHTML, 15, 15, {
 	      'width': 170, 
 	      'elementHandlers': specialElementHandlers
-        },function(bla) {   doc.save('saveInCallback.pdf');
+        },function(bla) {   doc.save('teste.pdf');
       });
     }
   }
@@ -47,5 +46,8 @@ components: { seat },
 </script>
 
 <style lang="scss">
+body{
+  background-image: url("./assets/background1.jpg")
+}
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 </style>
