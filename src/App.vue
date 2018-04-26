@@ -2,12 +2,15 @@
 <template>
   <div id="app">
 		<div class="container center-block" align="center">
-			<div class="row" v-for="line in lines">
-				<seat v-for="col in cols"></seat>
+      <div class="row">
+        <div class="col-lg-1 text-right" style="right:12px"  v-for="(charr) in alphabet.slice(0, cols)"><h4>{{charr}}</h4></div>
+      </div>
+			<div class="row" v-for="(line, index) in lines">
+        <h4 style="margin-top:20px;">{{index}}</h4>
+				<seat v-for="(col, index2) in cols" :positions="[index,index2]"></seat>
 			</div>
       <button class="btn btn-info"@click="createPDF()">PDF</button>
 		</div>
-	  
   </div>
 </template>
 
@@ -20,8 +23,9 @@ components: { seat },
   name: 'app',
   data () {
     return {
-      lines:3,
-			cols:6,
+      lines:8,
+			cols:8,
+      alphabet:["A","B","C","D", "E", "F", "G", "H", "I"]
     }
   },
   methods: {
