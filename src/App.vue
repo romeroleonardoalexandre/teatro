@@ -24,8 +24,8 @@ components: { seat },
   data () {
     return {
       lines:8,
-			cols:8,
-      alphabet:["A","B","C","D", "E", "F", "G", "H", "I"]
+			cols:12,
+      alphabet:["A","B","C","D", "E", "F", "G", "H", "I", "J", "K", "L", "M"]
     }
   },
   methods: {
